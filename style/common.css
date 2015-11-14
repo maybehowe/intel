@@ -114,3 +114,15 @@ body{
   background: url(../img/logo.png) no-repeat center center;
   background-size: 166px 31px;
 }
+.diff{}
+.diff h1{text-align: center;color: #fff;font-size: 1.6rem;}
+.diff img{width: 259px;margin: 0 auto;display: block;border: 1px solid #032155;}
+/*area{border: .2rem solid #f06a2e;display: block;outline: red;}*/
+.map{width: 261px;height: 159px;margin: -159px auto 3px;position: relative;}
+.map li{width: 26px;height: 26px;border-radius: 50%;position: absolute;}
+.map li.found{border: 2px solid #f16b2c;}
+.map li.map_0_0{margin: 6px 0 0 63px;}
+.map li.map_0_1{margin: 8px 0 0 178px;}
+.map li.map_0_2{margin: 42px 0 0 36px;}
+.map li.map_0_3{margin: 39px 0 0 102px;}
+.map li.map_0_4{margin: 52px 0 0 220px;}

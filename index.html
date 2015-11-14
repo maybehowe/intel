@@ -11,8 +11,31 @@
 
 </head>
 <body>
-	<a href="javascript:void(0);" class="logo">Intel IT Center 英特尔商用中心</a>
+<a href="javascript:void(0);" class="logo">Intel IT Center 英特尔商用中心</a>
 
+<div id="diff_wrap" class="diff_wrap">
+	<div id="diff_0" class="diff">
+		<h1>现在IT办公,繁杂让人眼花?</h1>
+
+		<img src="./img/diff_0_0.jpg" alt="" usemap="#diff_map_0">
+		<ul class="map">
+			<li class="map_0_0"></li>
+			<li class="map_0_1"></li>
+			<li class="map_0_2"></li>
+			<li class="map_0_3"></li>
+			<li class="map_0_4"></li>
+		</ul><!-- /ul.map -->
+
+		<img src="./img/diff_0_1.jpg" alt="">
+		<ul class="map">
+			<li class="map_0_0"></li>
+			<li class="map_0_1"></li>
+			<li class="map_0_2"></li>
+			<li class="map_0_3"></li>
+			<li class="map_0_4"></li>
+		</ul><!-- /ul.map -->
+	</div><!-- /#diff_0.diff -->
+</div><!-- /#diff_wrap.diff_wrap -->
 
 <script type="application/javascript" src="./js/zepto.js"></script>
 <script type="application/javascript" src="./js/fastclick.js"></script>
@@ -20,7 +43,27 @@
 <script type="application/javascript">
     $(function() {
 	    FastClick.attach(document.body);
-	});
+	    oDiff.init()
+	})
+
+	var oDiff = {
+		init: function(){
+			var self = this
+			self.bind()
+		},
+		bind: function(){
+			var self = this
+			$('.map li').click(function(event) {
+				var oThis = $(this),
+					sClass = oThis.attr('class')
+
+				if(!oThis.hasClass('found')){
+					oThis.addClass('found')
+					$('.'+sClass).addClass('found')
+				}
+			})
+		}
+	}
 </script>
 </body>
 </html>
