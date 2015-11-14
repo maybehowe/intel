@@ -1,0 +1,97 @@
+html,body, div, span, form,iframe,
+h1, h2, h3, h4, h5, p, em, img, ol, ul, li {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    vertical-align: baseline;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+html{font-size: 62.5%;}
+body {
+  font-family: Helvetica, 'STXihei', 'STHeiti Light', 'Microsoft yahei', sans-serif;
+  line-height: 1;
+  background-color: #fff;
+}
+
+
+input {
+  margin: 0;
+  padding: 0;
+  /*-webkit-appearance: none;*/
+  border-style: none;
+}
+
+input {
+  outline-style: none;
+}
+
+input[type="text"] {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+ol,
+ul,
+li {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+a:link,
+a:visited {
+  text-decoration: none;
+  color: #555555;
+}
+a {
+  display: block;
+}
+.clear {
+  clear: both;
+}
+.clearfix:after {
+  content: "\0020";
+  height: 0;
+  display: block;
+  clear: both;
+  visibility: hidden;
+}
+.clearfix {
+  *zoom: 1;
+}
+
+.floatl {
+  float: left;
+}
+
+.floatr {
+  float: right;
+}
+
+.shadow {
+  -webkit-box-shadow: 1px 0px 3px #d9dbdd;
+     -moz-box-shadow: 0px 1px 3px #d9dbdd;
+          box-shadow: 0px 1px 3px #d9dbdd;
+}
+
+.hidden {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+.display-flexbox {
+    display: -webkit-box;   /* 鍏煎鏃х殑 webkit锛孉ndroid 2.x */
+    display: -webkit-flex;  /* 鏍囧噯鍐欐硶 甯�webkit 鍓嶇紑锛屽吋瀹规爣鍑嗙‘绔嬩箣鍓嶇殑 webkit */
+    display: flex;          /* 鏍囧噯鍐欐硶 鏈�柊鐨�webkit, firefox, msie 鍙互鏀寔 */
+}
+.flexbox-children {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    flex: 1;
+}
