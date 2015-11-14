@@ -86,12 +86,31 @@ a {
   display: block;
 }
 .display-flexbox {
-    display: -webkit-box;   /* 鍏煎鏃х殑 webkit锛孉ndroid 2.x */
-    display: -webkit-flex;  /* 鏍囧噯鍐欐硶 甯�webkit 鍓嶇紑锛屽吋瀹规爣鍑嗙‘绔嬩箣鍓嶇殑 webkit */
-    display: flex;          /* 鏍囧噯鍐欐硶 鏈�柊鐨�webkit, firefox, msie 鍙互鏀寔 */
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;  
 }
 .flexbox-children {
     -webkit-box-flex: 1;
     -webkit-flex: 1;
     flex: 1;
+}
+
+html{
+  height: 100%;
+}
+body{
+  height: 100%;
+  background: url(../img/bg.jpg) no-repeat center center;
+  background-size: cover;
+}
+.logo{
+  width: 166px;
+  height: 31px;
+  padding: 15px 0;
+  margin: 0 auto;
+  text-indent: -99999px;
+  display: block;
+  background: url(../img/logo.png) no-repeat center center;
+  background-size: 166px 31px;
 }
