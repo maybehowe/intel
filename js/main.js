@@ -1,0 +1,144 @@
+(function(){
+	window.intel = {
+		over_link: ['http://v.youku.com/v_show/id_XMTM0ODU1NDI4OA==.html',
+					'http://v.youku.com/v_show/id_XMTM0ODU1ODI1Mg==.html',
+					'http://v.youku.com/v_show/id_XMTM0ODU1ODcwNA==.html',
+					'http://v.youku.com/v_show/id_XMTM0ODU1OTg0NA==.html'],
+		one_line: 'http://prcappzone.intel.com/it-management/it-future-phone/index.html?utm_source=Social&utm_medium=h5&utm_campaign=biz_pc_preference_campaign',
+
+		showBegin: function () {
+			$('.intel_wrap').removeClass('active');
+			$('.intel_begin').addClass('active');
+		},
+		hideBegin: function () {
+			$('.intel_begin').removeClass('active');
+		},
+		showOver: function (status, linkIndex) {
+			if(status == 'pass'){
+				$('.intel_over_pass').addClass('active');
+			}else if(status == 'fail'){
+				$('.intel_over_fail').addClass('active');
+			}
+		},
+		selectImg: function (obj) {
+			$('.intel_img_item').removeClass('active');
+			obj.addClass('active');
+		},
+		gameBegin: function (index) {
+			this.hideBegin()
+			oDiff.play(index-1);
+		}
+	}
+
+	$('.intel_event_body').on('click', function () {
+		var parent_obj = $(this).closest('.intel_img_item');
+		if(parent_obj.hasClass('active')){
+			var index = parent_obj.attr('id').split('_')[1];
+			intel.gameBegin(index);
+		}else{
+			intel.selectImg(parent_obj);
+		}
+	});
+
+	$('.intel_ctrl_other').on('click', function () {
+		oDiff.hide()
+		intel.showBegin();
+	})
+})();
+
+var oDiff = {
+	iTime: 60,
+	iNow: 0,
+	iCircle: 5,
+	iCircleNow: 0,
+	oInterval: {},
+	oDiffWrap: $('#diff_wrap'),
+	oTimeLeft: $('#time_left'),
+	oCountAll: $('#count_all'),
+	oCountCurrent: $('#count_current'),
+	oBarWrap: $("#countdown"),
+	oCountBar: $("#countdown_bar"),
+	iBarWidth: 178,
+	init: function(){
+		var self = this
+		self.bind()
+
+		//游戏总数
+		self.oCountAll.html(self.oDiffWrap.find('.diff').length)
+	},
+	bind: function(){
+		var self = this
+		$('.map li').click(function(event) {
+			var oThis = $(this),
+				iIdx = oThis.index()-1
+
+			if(!oThis.hasClass('found')){
+				oThis
+					.addClass('found')
+					.parent().siblings('.map').find('li').eq(iIdx).addClass('found')
+				self.iCircleNow ++
+				if(self.iCircleNow >= self.iCircle){
+					clearInterval(self.oInterval)
+					// console.log('成功弹窗')
+					intel.showOver('pass')
+				}
+			}
+		})
+	},
+	play: function(eq){
+		var self = this
+
+		//当前游戏
+		self.oCountCurrent.html(eq+1)
+
+		//显示游戏并初始化
+		self.oDiffWrap
+			.addClass('show')
+			.find('.diff').eq(eq).addClass('show')
+				.siblings('.diff.show').removeClass('show')
+
+		self.oDiffWrap.find('li.found').removeClass('found')
+		clearInterval(self.oInterval)
+		self.iCircleNow = 0
+		self.oTimeLeft.html(self.iTime)
+
+		//设置倒计时条长度
+		self.iBarWidth = self.oBarWrap.width()
+		self.oCountBar.width(self.iBarWidth)
+
+		self.iNow = self.iTime
+		self.oInterval = setInterval('oDiff.countdown()', 1000)
+
+	},
+	countdown: function(){
+		var self = this,
+			iWidthNow = 0
+
+		self.iNow --
+		if(self.iNow < 0){
+			clearInterval(self.oInterval)
+			// console.log('失败弹窗')
+			intel.showOver('fail')
+		}else{
+			self.oTimeLeft.html(self.iNow)
+			if(self.iNow <= 10){
+				self.oCountBar.addClass('countdown_bar_red')
+			}
+
+			iWidthNow = (self.iNow/self.iTime)*self.iBarWidth
+			self.oCountBar.width(iWidthNow)
+		}
+	},
+	hide: function(){
+		var self = this
+
+		clearInterval(self.oInterval)
+		self.oDiffWrap.removeClass('show')
+	}
+}
+
+$(function() {
+    FastClick.attach(document.body);
+    oDiff.init()
+    // oDiff.play(3)
+})
