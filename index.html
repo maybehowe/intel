@@ -39,24 +39,68 @@
 	<div id="diff_1" class="diff">
 		<h1>现在IT办公,连线好是麻烦?</h1>
 
-		<img src="./img/diff_1_0.jpg" alt="" usemap="#diff_map_0">
 		<ul class="map">
-			<li class="map_0_0"></li>
-			<li class="map_0_1"></li>
-			<li class="map_0_2"></li>
-			<li class="map_0_3"></li>
-			<li class="map_0_4"></li>
+			<img src="./img/diff_1_0.jpg" alt="" usemap="#diff_map_0">
+			<li class="map_1_0"></li>
+			<li class="map_1_1"></li>
+			<li class="map_1_2"></li>
+			<li class="map_1_3"></li>
+			<li class="map_1_4"></li>
 		</ul><!-- /ul.map -->
 
-		<img src="./img/diff_1_1.jpg" alt="">
 		<ul class="map">
-			<li class="map_0_0"></li>
-			<li class="map_0_1"></li>
-			<li class="map_0_2"></li>
-			<li class="map_0_3"></li>
-			<li class="map_0_4"></li>
+			<img src="./img/diff_1_1.jpg" alt="">
+			<li class="map_1_0"></li>
+			<li class="map_1_1"></li>
+			<li class="map_1_2"></li>
+			<li class="map_1_3"></li>
+			<li class="map_1_4"></li>
 		</ul><!-- /ul.map -->
 	</div><!-- /#diff_1.diff -->
+
+	<div id="diff_2" class="diff">
+		<h1>现在IT办公,连线好是麻烦?</h1>
+
+		<ul class="map">
+			<img src="./img/diff_2_0.jpg" alt="" usemap="#diff_map_0">
+			<li class="map_2_0"></li>
+			<li class="map_2_1"></li>
+			<li class="map_2_2"></li>
+			<li class="map_2_3"></li>
+			<li class="map_2_4"></li>
+		</ul><!-- /ul.map -->
+
+		<ul class="map">
+			<img src="./img/diff_2_1.jpg" alt="">
+			<li class="map_2_0"></li>
+			<li class="map_2_1"></li>
+			<li class="map_2_2"></li>
+			<li class="map_2_3"></li>
+			<li class="map_2_4"></li>
+		</ul><!-- /ul.map -->
+	</div><!-- /#diff_2.diff -->
+
+	<div id="diff_3" class="diff">
+		<h1>现在IT办公,连线好是麻烦?</h1>
+
+		<ul class="map">
+			<img src="./img/diff_3_0.jpg" alt="" usemap="#diff_map_0">
+			<li class="map_3_0"></li>
+			<li class="map_3_1"></li>
+			<li class="map_3_2"></li>
+			<li class="map_3_3"></li>
+			<li class="map_3_4"></li>
+		</ul><!-- /ul.map -->
+
+		<ul class="map">
+			<img src="./img/diff_3_1.jpg" alt="">
+			<li class="map_3_0"></li>
+			<li class="map_3_1"></li>
+			<li class="map_3_2"></li>
+			<li class="map_3_3"></li>
+			<li class="map_3_4"></li>
+		</ul><!-- /ul.map -->
+	</div><!-- /#diff_3.diff -->
 
 	<div class="diff_bottom">
 		<span class="tip">点出5处不同</span>
@@ -86,7 +130,7 @@
     $(function() {
 	    FastClick.attach(document.body);
 	    oDiff.init()
-	    oDiff.play(0)
+	    oDiff.play(3)
 	})
 
 	var oDiff = {
@@ -113,7 +157,7 @@
 			var self = this
 			$('.map li').click(function(event) {
 				var oThis = $(this),
-					iIdx = oThis.index()
+					iIdx = oThis.index()-1
 
 				if(!oThis.hasClass('found')){
 					oThis
