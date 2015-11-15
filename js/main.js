@@ -102,7 +102,7 @@ var oDiff = {
 		var self = this
 
 		//当前游戏
-		self.iGame = eq+1
+		self.iGame = eq
 		self.oCountCurrent.html(eq+1)
 
 		//显示游戏并初始化
