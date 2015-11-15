@@ -33,7 +33,6 @@
 			obj.addClass('active');
 		},
 		gameBegin: function (index) {
-			this.hideBegin()
 			oDiff.play(index-1);
 		}
 	}
@@ -101,6 +100,9 @@ var oDiff = {
 	play: function(eq){
 		var self = this
 
+		//隐藏首页
+		intel.hideBegin()
+
 		//当前游戏
 		self.iGame = eq
 		self.oCountCurrent.html(eq+1)
@@ -154,5 +156,5 @@ var oDiff = {
 $(function() {
     FastClick.attach(document.body);
     oDiff.init()
-    // oDiff.play(3)
+    // oDiff.play(0)
 })
