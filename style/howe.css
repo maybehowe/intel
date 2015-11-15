@@ -1,0 +1,19 @@
+.intel_begin{
+	width: 100%;
+}
+.intel_begin .intel_begin_title{
+	color: #fff;
+	font-size: 3rem;
+	font-weight: bold;
+	text-align: center;
+	line-height: 3.4rem;
+	padding-top: 1rem;
+}
+.intel_img_select{
+	width: 90%;
+	margin:0 auto;
+}
+.intel_img_select .intel_img_item{
+	height: 168px;
+	width: 45%;
+}
