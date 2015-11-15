@@ -127,6 +127,7 @@
 	background-size: 3px 4px;
 }
 .intel_over{
+	z-index: 100;
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -146,6 +147,7 @@
 	background: url(../img/intel_angle_up.png) no-repeat;
 	background-position: 102px center;
 	-webkit-background-size: 10px 6px ;
+	z-index: 40;
 }
 
 .intel_over_pass .intel_over_person{
@@ -226,6 +228,23 @@
 	background-position: 2px -36px;
 }
 @media screen and (max-height:479px){
-
-
+	.intel_begin .intel_begin_title{
+		color: #fff;
+		font-size: 2rem;
+		font-weight: bold;
+		text-align: center;
+		line-height: 2.2rem;
+	}
+	.intel_img_select{
+		margin-top: 10px;
+	}
+	.intel_over .intel_over_dialog{
+		top: 130px;
+	}
+	.intel_over_pass .intel_over_person{
+		top: 50px;
+	}
+	.intel_over_fail .intel_over_person{
+		top: 22px;
+	}
 }
