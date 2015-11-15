@@ -12,7 +12,7 @@
 		},
 		hideBegin: function () {
 			$('.intel_begin').removeClass('active');
-		}
+		},
 		showOver: function (status, linkIndex) {
 			if(status == 'pass'){
 				$('intel_over_pass').addClass('active');
