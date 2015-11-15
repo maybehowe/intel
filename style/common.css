@@ -286,10 +286,12 @@ body{
 }
 .intel_game_tip{
   position: absolute;
-  bottom: 69px;
-  right: 107px;
-  width: 186px;
-  height: 46px;
+  bottom: 64px;
+  right: 105px;
+  width: 172px;
+  padding: 8px 10px 8px 6px;
+  line-height: 1.2rem;
+  height: 36px;
   background: url(../img/intel_dialog.png) no-repeat;
   background-size: 186px 46px;
   color: #1dafec;
@@ -305,9 +307,9 @@ body{
   color: #1dafec;
   border:1px rgba(24, 182, 255, 0.59) solid;
   background: url(../img/intel_angle_right.png) no-repeat;
-  background-position: 90px center;
-  -webkit-background-size: 3px 4px;
-  background-size: 3px 4px;
+  background-position: right center;
+  -webkit-background-size: 5px 4px;
+  background-size: 5px 4px;
 }
 .intel_over{
   z-index: 100;
@@ -416,12 +418,12 @@ body{
 }
 .intel_over_ctrl .intel_ctrl_btn.intel_ctrl_other{
   width: 96px;
-  padding:4px 6px 4px 22px;
+  padding:6px 6px 6px 22px;
   background-position: 2px 2px;
 }
 .intel_over_ctrl .intel_ctrl_btn.intel_ctrl_link_it{
   width: 96px;
-  padding:4px 0px 4px 28px;
+  padding:6px 0px 6px 28px;
   background-position: 2px -36px;
 }
 @media screen and (max-height:479px){

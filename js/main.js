@@ -4,10 +4,10 @@
 					'http://v.youku.com/v_show/id_XMTM0ODU1ODI1Mg==.html',
 					'http://v.youku.com/v_show/id_XMTM0ODU1ODcwNA==.html',
 					'http://v.youku.com/v_show/id_XMTM0ODU1OTg0NA==.html'],
-		over_text: ['带你见识未来IT办公环境 多么简单！',
-					'带你见识未来IT办公会议 多么智能！',
-					'带你见识未来IT办公管理 多么轻松！',
-					'带你见识未来IT办公效率 多么迅捷！'],
+		over_text: ['带你见识未来IT办公环境</br>多么简单！',
+					'带你见识未来IT办公会议</br>多么智能！',
+					'带你见识未来IT办公管理</br>多么轻松！',
+					'带你见识未来IT办公效率</br>多么迅捷！'],
 		one_line: 'http://prcappzone.intel.com/it-management/it-future-phone/index.html?utm_source=Social&utm_medium=h5&utm_campaign=biz_pc_preference_campaign',
 
 		showBegin: function () {
