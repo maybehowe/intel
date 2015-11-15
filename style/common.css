@@ -327,10 +327,15 @@ body{
   border:1px rgba(255,255,255,0.3) solid;
   padding:4px 20px 4px 14px;
   font-size: 1.2rem;
+  background: url(../img/intel_angle_r.png) no-repeat;
+  background-position: 116px center;
+  -webkit-background-size: 6px 10px;
+  z-index: 40;
+}
+.intel_over .intel_over_share.active{
   background: url(../img/intel_angle_up.png) no-repeat;
   background-position: 102px center;
   -webkit-background-size: 10px 6px ;
-  z-index: 40;
 }
 
 .intel_over_pass .intel_over_person{
@@ -349,12 +354,21 @@ body{
   left: 50%;
   top: 150px;
   margin-left: -72px;
-  
   text-align: center;
   font-size: 1.4rem;
   font-weight: bold;
   line-height: 1.6rem;
   color: #00d2ff;
+}
+.intel_over .intel_hotlink{
+  display: block;
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  left: 50%;
+  bottom: 6px;
+  margin-left: -16px;
+
 }
 .intel_over_pass .intel_over_dialog{
   background: url(../img/intel_ribbon_pass.png) no-repeat;

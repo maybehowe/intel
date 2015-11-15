@@ -4,6 +4,10 @@
 					'http://v.youku.com/v_show/id_XMTM0ODU1ODI1Mg==.html',
 					'http://v.youku.com/v_show/id_XMTM0ODU1ODcwNA==.html',
 					'http://v.youku.com/v_show/id_XMTM0ODU1OTg0NA==.html'],
+		over_text: ['带你见识未来IT办公环境多么简单！',
+					'带你见识未来IT办公会议多么智能！',
+					'带你见识未来IT办公管理多么轻松！',
+					'带你见识未来IT办公效率多么迅捷！'],
 		one_line: 'http://prcappzone.intel.com/it-management/it-future-phone/index.html?utm_source=Social&utm_medium=h5&utm_campaign=biz_pc_preference_campaign',
 
 		showBegin: function () {
@@ -18,6 +22,10 @@
 				$('.intel_over_pass').addClass('active');
 			}else if(status == 'fail'){
 				$('.intel_over_fail').addClass('active');
+			}
+			if(linkIndex){
+				$('.intel_over_text').html(intel.over_text[linkIndex]);
+				$('.intel_hotlink').attr('href', intel.over_link[linkIndex]);
 			}
 		},
 		selectImg: function (obj) {
@@ -43,6 +51,10 @@
 	$('.intel_ctrl_other').on('click', function () {
 		oDiff.hide()
 		intel.showBegin();
+	});
+
+	$('.intel_over_share').on('click', function () {
+		$(this).html('点击右上角分享').addClass('active');
 	})
 })();
 
