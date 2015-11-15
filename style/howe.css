@@ -166,12 +166,21 @@
 	left: 50%;
 	top: 150px;
 	margin-left: -72px;
-	
 	text-align: center;
 	font-size: 1.4rem;
 	font-weight: bold;
 	line-height: 1.6rem;
 	color: #00d2ff;
+}
+.intel_over .intel_hotlink{
+	display: block;
+	position: absolute;
+	width: 32px;
+	height: 32px;
+	left: 50%;
+	bottom: 6px;
+	margin-left: -16px;
+
 }
 .intel_over_pass .intel_over_dialog{
 	background: url(../img/intel_ribbon_pass.png) no-repeat;
