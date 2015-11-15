@@ -202,7 +202,8 @@ body{
   line-height: 2.8rem;
 }
 .intel_img_select{
-  width: 274px;
+  /*width: 274px;*/
+  width: 90%;
   margin:0 auto;
   margin-top: 20px;
   display: -webkit-flex;
@@ -221,8 +222,8 @@ body{
     justify-content: space-between;
 }
 .intel_img_select .intel_img_item{
-  height: 84px;
-  width: 131px;
+  /*height: 84px;*/
+  width: 48%;
   margin-bottom: 6px;
   background: #fff;
   border:2px #00113f solid;
@@ -230,8 +231,9 @@ body{
   position: relative;
 }
 .intel_img_item img{
-  height: 84px;
-  width: 131px;
+  display: block;
+  /*height: 84px;*/
+  width: 100%;
 }
 .intel_img_item .intel_img_light_box{
   position: absolute;
@@ -332,6 +334,7 @@ body{
   background: url(../img/intel_angle_r.png) no-repeat;
   background-position: 116px center;
   -webkit-background-size: 6px 10px;
+  background-size: 6px 10px;
   z-index: 40;
 }
 .intel_over .intel_over_share.active{
@@ -445,5 +448,144 @@ body{
   }
   .intel_over_fail .intel_over_person{
     top: 22px;
+  }
+}
+
+@media screen and (min-width:375px){
+  .intel_game_des .intel_person{
+    position: absolute;
+    bottom: 0px;
+    right: 6px;
+    width: 124px;
+    height: 196px;
+    background: url(../img/intel_person_bottom.png) no-repeat;
+    background-size: 124px 196px;
+  }
+  .intel_game_tip{
+    position: absolute;
+    bottom: 84px;
+    right: 126px;
+    width: 207px;
+    height: 39px;
+    padding: 8px 10px 8px 6px;
+    font-size: 1.4rem;
+    line-height: 1.4rem;
+    background: url(../img/intel_dialog.png) no-repeat;
+    background-size: 223px 55px;
+    color: #1dafec;
+  }
+  .intel_it_link{
+    display: block;
+    position: absolute;
+    bottom: 38px;
+    right: 136px;
+    padding: 4px;
+    padding-right: 8px;
+    font-size: 0.8rem;
+    color: #1dafec;
+    font-size: 1.4rem;
+    border:1px rgba(24, 182, 255, 0.59) solid;
+    background: url(../img/intel_angle_right.png) no-repeat;
+    background-position: right center;
+    -webkit-background-size: 6px 5px;
+    background-size: 6px 5px;
+  }
+
+  .intel_over .intel_over_share{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #fffffd;
+    background:rgba(0,0,0,0.6);
+    border:1px rgba(255,255,255,0.3) solid;
+    padding:4px 20px 4px 14px;
+    font-size: 1.4rem;
+    background: url(../img/intel_angle_r.png) no-repeat;
+    background-position: 132px center;
+    -webkit-background-size: 7px 11px;
+    background-size: 7px 11px;
+    z-index: 40;
+  }
+  .intel_over .intel_over_share.active{
+  background: url(../img/intel_angle_up.png) no-repeat;
+  background-position: 118px center;
+  -webkit-background-size: 11px 7px ;
+}
+  .intel_over .intel_over_dialog{
+    position: absolute;
+    height: 144px;
+    width: 172px;
+    left: 50%;
+    top: 164px;
+    margin-left: -86px;
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: bold;
+    line-height: 2rem;
+    color: #00d2ff;
+  }
+  .intel_over_dialog span{
+    display: inline-block;
+    font-size: 1.4rem;
+    font-weight: normal;
+    margin-top: 16px;
+    color: #fff;
+  }
+  .intel_over_pass .intel_over_dialog{
+    background: url(../img/intel_ribbon_pass.png) no-repeat;
+    background-size: 172px 144px;
+  }
+  .intel_over_fail .intel_over_dialog{
+    background: url(../img/intel_ribbon_fail.png) no-repeat;
+    background-size: 172px 144px;
+  }
+  .intel_over .intel_hotlink{
+    display: block;
+    position: absolute;
+    width: 38px;
+    height: 38px;
+    left: 50%;
+    bottom: 8px;
+    margin-left: -19px;
+  }
+  .intel_over_pass .intel_over_person{
+    width: 138px;
+    height: 242px;
+    position: absolute;
+    left: 0;
+    top: 66px;
+    background: url(../img/intel_person_left.png) no-repeat;
+    background-size: 138px 242px;
+  }
+  .intel_over_fail .intel_over_person{
+    width: 160px;
+    height: 130px;
+    position: absolute;
+    left: 50%;
+    top: 34px;
+    margin-left: -80px;
+    background: url(../img/intel_person_up.png) no-repeat;
+    background-size:160px 130px ;
+  }
+  .intel_over_ctrl .intel_ctrl_btn{
+    display: block;
+    color: #fff;
+    margin:0 auto;
+    margin-bottom: 20px;
+    font-size: 1.4rem;
+    border:1px rgba(255,255,255,0.37) solid;
+    background: url(../img/intel_ctrl_icon.png) no-repeat;
+    -webkit-background-size: 20px 67px;
+    background-size: 20px 67px;
+  }
+  .intel_over_ctrl .intel_ctrl_btn.intel_ctrl_other{
+    width: 112px;
+    padding:6px 6px 6px 26px;
+    background-position: 2px 2px;
+  }
+  .intel_over_ctrl .intel_ctrl_btn.intel_ctrl_link_it{
+    width: 112px;
+    padding:6px 0px 6px 32px;
+    background-position: 2px -42px;
   }
 }
