@@ -59,6 +59,7 @@
 })();
 
 var oDiff = {
+	iGame: 0,
 	iTime: 60,
 	iNow: 0,
 	iCircle: 5,
@@ -92,7 +93,7 @@ var oDiff = {
 				if(self.iCircleNow >= self.iCircle){
 					clearInterval(self.oInterval)
 					// console.log('成功弹窗')
-					intel.showOver('pass')
+					intel.showOver('pass', self.iGame)
 				}
 			}
 		})
@@ -101,6 +102,7 @@ var oDiff = {
 		var self = this
 
 		//当前游戏
+		self.iGame = eq+1
 		self.oCountCurrent.html(eq+1)
 
 		//显示游戏并初始化
@@ -130,7 +132,7 @@ var oDiff = {
 		if(self.iNow < 0){
 			clearInterval(self.oInterval)
 			// console.log('失败弹窗')
-			intel.showOver('fail')
+			intel.showOver('fail', self.iGame)
 		}else{
 			self.oTimeLeft.html(self.iNow)
 			if(self.iNow <= 10){
