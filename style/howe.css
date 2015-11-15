@@ -1,19 +1,211 @@
 .intel_begin{
 	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
 }
 .intel_begin .intel_begin_title{
 	color: #fff;
-	font-size: 3rem;
+	font-size: 2.8rem;
 	font-weight: bold;
 	text-align: center;
-	line-height: 3.4rem;
-	padding-top: 1rem;
+	line-height: 2.8rem;
 }
 .intel_img_select{
-	width: 90%;
+	width: 274px;
 	margin:0 auto;
+	margin-top: 20px;
+	display: -webkit-flex;
+	-webkit-flex-flow: row wrap;
+	-webkit-align-items: stretch;
+	display: -moz-flex;
+	-moz-flex-flow: row wrap;
+	-moz-align-items: stretch;
+	display: -ms-flex;
+	-ms-flex-flow: row wrap;
+	-ms-align-items: stretch;
+	display: flex;
+	flex-flow: row wrap;
+	align-items: stretch;
+
+  	justify-content: space-between;
 }
 .intel_img_select .intel_img_item{
-	height: 168px;
-	width: 45%;
+	height: 84px;
+	width: 131px;
+	margin-bottom: 6px;
+	background: #fff;
+	border:2px #00113f solid;
+	border-radius: 2px;
+	position: relative;
+}
+.intel_img_item img{
+	height: 84px;
+	width: 131px;
+}
+.intel_img_item .intel_img_light_box{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background: rgba(0,0,0,0.55);
+}
+.intel_img_item .intel_img_btn{
+	display: none;
+	position: absolute;
+	width: 43px;
+	height: 25px;
+	top: 50%;
+	left: 50%;
+	margin-top: -12px;
+	margin-left: -22px;
+	background: url(../img/intel_begin_btn.png) no-repeat;
+	background-size: 43px 25px;
+}
+.intel_img_item.active .intel_img_light_box{
+	display: none;
+}
+.intel_img_item.active .intel_img_btn{
+	display: block;
+}
+.intel_game_des{
+	position: absolute;
+	height: 164px;
+	width: 100%;
+	bottom: 0;
+}
+.intel_game_des .intel_person{
+	position: absolute;
+	bottom: 0px;
+	right: 6px;
+	width: 104px;
+	height: 164px;
+	background: url(../img/intel_person_bottom.png) no-repeat;
+	background-size: 104px 164px;
+}
+.intel_game_tip{
+	position: absolute;
+	bottom: 69px;
+	right: 107px;
+	width: 186px;
+	height: 46px;
+	background: url(../img/intel_dialog.png) no-repeat;
+	background-size: 186px 46px;
+	color: #1dafec;
+}
+.intel_it_link{
+	display: block;
+	position: absolute;
+	bottom: 28px;
+	right: 116px;
+	padding: 4px;
+	padding-right: 8px;
+	font-size: 0.8rem;
+	color: #1dafec;
+	border:1px rgba(24, 182, 255, 0.59) solid;
+	background: url(../img/intel_angle_right.png) no-repeat;
+	background-position: 90px center;
+	-webkit-background-size: 3px 4px;
+	background-size: 3px 4px;
+}
+.intel_over{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background:rgba(0, 0, 0, 0.8);
+}
+.intel_over .intel_over_share{
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	color: #fffffd;
+	background:rgba(0,0,0,0.6);
+	border:1px rgba(255,255,255,0.3) solid;
+	padding:4px 20px 4px 14px;
+	font-size: 1.2rem;
+	background: url(../img/intel_angle_up.png) no-repeat;
+	background-position: 102px center;
+	-webkit-background-size: 10px 6px ;
+}
+
+.intel_over_pass .intel_over_person{
+	width: 115px;
+	height: 202px;
+	position: absolute;
+	left: 0;
+	top: 66px;
+	background: url(../img/intel_person_left.png) no-repeat;
+	background-size: 115px 202px;
+}
+.intel_over .intel_over_dialog{
+	position: absolute;
+	height: 120px;
+	width: 144px;
+	left: 50%;
+	top: 150px;
+	margin-left: -72px;
+	
+	text-align: center;
+	font-size: 1.4rem;
+	font-weight: bold;
+	line-height: 1.6rem;
+	color: #00d2ff;
+}
+.intel_over_pass .intel_over_dialog{
+	background: url(../img/intel_ribbon_pass.png) no-repeat;
+	background-size: 144px 120px;
+}
+.intel_over_fail .intel_over_person{
+	width: 134px;
+	height: 108px;
+	position: absolute;
+	left: 50%;
+	top: 42px;
+	margin-left: -67px;
+	background: url(../img/intel_person_up.png) no-repeat;
+	background-size:134px 108px ;
+}
+.intel_over_fail .intel_over_dialog{
+	background: url(../img/intel_ribbon_fail.png) no-repeat;
+	background-size: 144px 120px;
+}
+
+.intel_over_dialog span{
+	display: inline-block;
+	font-size: 1.1rem;
+	font-weight: normal;
+	margin-top: 16px;
+	color: #fff;
+}
+.intel_over_ctrl{
+	position: absolute;
+	height: 130px;
+	width: 100%;
+	left: 0;
+	bottom: 0;
+}
+.intel_over_ctrl .intel_ctrl_btn{
+	display: block;
+	color: #fff;
+	margin:0 auto;
+	margin-bottom: 20px;
+	font-size: 1rem;
+	border:1px rgba(255,255,255,0.37) solid;
+	background: url(../img/intel_ctrl_icon.png) no-repeat;
+	-webkit-background-size: 17px 56px;
+	background-size: 17px 56px;
+}
+.intel_over_ctrl .intel_ctrl_btn.intel_ctrl_other{
+	width: 96px;
+	padding:4px 6px 4px 22px;
+	background-position: 2px 2px;
+}
+.intel_over_ctrl .intel_ctrl_btn.intel_ctrl_link_it{
+	width: 96px;
+	padding:4px 0px 4px 28px;
+	background-position: 2px -36px;
 }
