@@ -115,15 +115,38 @@ body{
   background: url(../img/logo.png) no-repeat center center;
   background-size: 166px 31px;
 }
-.diff{}
-.diff h1{text-align: center;color: #fff;font-size: 1.6rem;}
-.diff img{width: 259px;margin: 0 auto;display: block;border: 1px solid #032155;}
+.diff_wrap{display: none;}
+.diff_wrap.show{display: block;}
+.diff{display: none;}
+.diff.show{display: block;}
+.diff h1{text-align: center;color: #fff;font-size: 1.6rem;padding-bottom: 15px;}
+.diff img{width: 259px;margin: 0 auto;display: block;border: 1px solid #032155;     width: 100%;border: none;}
 /*area{border: .2rem solid #f06a2e;display: block;outline: red;}*/
-.map{width: 261px;height: 159px;margin: -159px auto 3px;position: relative;}
-.map li{width: 26px;height: 26px;border-radius: 50%;position: absolute;}
+.map{width: 261px;height: 159px;margin: -159px auto 3px;position: relative;        margin-top: 0;width: 259px;margin: 0 auto;height: auto;border: 1px solid #032155;}
+.map li{width: 26px;height: 26px;border-radius: 50%;position: absolute;border: 2px solid #f16b2c;        top: 0;margin: 0;}
 .map li.found{border: 2px solid #f16b2c;}
-.map li.map_0_0{margin: 6px 0 0 63px;}
-.map li.map_0_1{margin: 8px 0 0 178px;}
-.map li.map_0_2{margin: 42px 0 0 36px;}
+.map li.map_0_0{margin: 6px 0 0 63px;      margin: 0;top: 3%;left: 24%;}
+.map li.map_0_1{margin: 8px 0 0 178px;     margin: 0;top: 3%;left: 68%;}
+.map li.map_0_2{margin: 42px 0 0 36px;     margin: 0;top: 26%;left: 15%;}
 .map li.map_0_3{margin: 39px 0 0 102px;}
 .map li.map_0_4{margin: 52px 0 0 220px;}
+
+.diff_bottom{width: 261px;margin: 0 auto;}
+.tip{line-height: 15px;color: #1dafec;font-size: 1rem;float: right;display: inline-block;background: #00285e;padding: 0 6px;border-radius: 3px;box-shadow: 2px 2px 2px #011543;margin: -2px 0 0;}
+.time_wrap{clear: both;}
+.count_wrap{width: 26px;height: 24px;font-size: 12px;padding: 7px 0 0 5px;background: url(../img/magnifier.png) no-repeat center center;background-size: 31px 31px;color: #fff;float: left;margin: 6px 0 0 8px;}
+.time_right{margin: 0 0 0 45px;color: #20b3eb;text-shadow: 1px 1px 1px #021231;font-size: 12px;overflow: hidden;}
+.countdown{width: 178px;height: 10px;margin: 0 5px 0 0;display: inline-block;background: #000;border: 1px solid #061c41;border-bottom-color: #2b63c1;border-radius: 5px;box-shadow: 0 0 6px #093e90, 0 0 6px #093e90, 0 0 6px #093e90;float: left;}
+.countdown_bar{width: 178px;height: 10px;background: url(../img/countdown_bar.jpg) repeat-x 0 0;background-size: 7px 20px;border-radius: 5px;}
+.countdown_bar.countdown_bar_red{background-position: 0 bottom;}
+.time_right small{display: block;color: #858585;font-size: 8px;padding-bottom: 3px;}
+.time_left_wrap{float: left;}
+
+@media screen and (max-height: 479px){
+  .logo{padding: 10px 0;}
+  .map{width: 215px;}
+  .map li{width: 22px;height: 22px;}
+
+  .diff_bottom{width: 215px;}
+  .countdown{width: 140px;}
+}

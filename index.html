@@ -11,14 +11,14 @@
 
 </head>
 <body>
-<a href="javascript:void(0);" class="logo">Intel IT Center 英特尔商用中心</a>
-
 <div id="diff_wrap" class="diff_wrap">
+    <a href="javascript:void(0);" class="logo">Intel IT Center 英特尔商用中心</a>
+
 	<div id="diff_0" class="diff">
 		<h1>现在IT办公,繁杂让人眼花?</h1>
 
-		<img src="./img/diff_0_0.jpg" alt="" usemap="#diff_map_0">
 		<ul class="map">
+			<img src="./img/diff_0_0.jpg" alt="" usemap="#diff_map_0">
 			<li class="map_0_0"></li>
 			<li class="map_0_1"></li>
 			<li class="map_0_2"></li>
@@ -26,8 +26,8 @@
 			<li class="map_0_4"></li>
 		</ul><!-- /ul.map -->
 
-		<img src="./img/diff_0_1.jpg" alt="">
 		<ul class="map">
+			<img src="./img/diff_0_1.jpg" alt="">
 			<li class="map_0_0"></li>
 			<li class="map_0_1"></li>
 			<li class="map_0_2"></li>
@@ -35,6 +35,48 @@
 			<li class="map_0_4"></li>
 		</ul><!-- /ul.map -->
 	</div><!-- /#diff_0.diff -->
+
+	<div id="diff_1" class="diff">
+		<h1>现在IT办公,连线好是麻烦?</h1>
+
+		<img src="./img/diff_1_0.jpg" alt="" usemap="#diff_map_0">
+		<ul class="map">
+			<li class="map_0_0"></li>
+			<li class="map_0_1"></li>
+			<li class="map_0_2"></li>
+			<li class="map_0_3"></li>
+			<li class="map_0_4"></li>
+		</ul><!-- /ul.map -->
+
+		<img src="./img/diff_1_1.jpg" alt="">
+		<ul class="map">
+			<li class="map_0_0"></li>
+			<li class="map_0_1"></li>
+			<li class="map_0_2"></li>
+			<li class="map_0_3"></li>
+			<li class="map_0_4"></li>
+		</ul><!-- /ul.map -->
+	</div><!-- /#diff_1.diff -->
+
+	<div class="diff_bottom">
+		<span class="tip">点出5处不同</span>
+		
+		<div class="time_wrap">
+			<div class="count_wrap">
+				<span id="count_current">1</span>/<span id="count_all">4</span>
+			</div><!-- /#count.count -->
+
+			<div class="time_right">
+				<small>TIME:</small>
+				<div id="countdown" class="countdown">
+					<div id="countdown_bar" class="countdown_bar"></div>
+				</div><!-- /#countdown.countdown -->
+				<div class="time_left_wrap">
+					<span id="time_left" class="time_left">60</span>s
+				</div><!-- /.time_left_wrap -->
+			</div><!-- /.time_right -->
+		</div><!-- /.time_wrap -->
+	</div><!-- /.diff_bottom -->
 </div><!-- /#diff_wrap.diff_wrap -->
 
 <script type="application/javascript" src="./js/zepto.js"></script>
@@ -44,24 +86,95 @@
     $(function() {
 	    FastClick.attach(document.body);
 	    oDiff.init()
+	    oDiff.play(0)
 	})
 
 	var oDiff = {
+		iTime: 60,
+		iNow: 0,
+		iCircle: 5,
+		iCircleNow: 0,
+		oInterval: {},
+		oDiffWrap: $('#diff_wrap'),
+		oTimeLeft: $('#time_left'),
+		oCountAll: $('#count_all'),
+		oCountCurrent: $('#count_current'),
+		oBarWrap: $("#countdown"),
+		oCountBar: $("#countdown_bar"),
+		iBarWidth: 178,
 		init: function(){
 			var self = this
 			self.bind()
+
+			//游戏总数
+			self.oCountAll.html(self.oDiffWrap.find('.diff').length)
 		},
 		bind: function(){
 			var self = this
 			$('.map li').click(function(event) {
 				var oThis = $(this),
-					sClass = oThis.attr('class')
+					iIdx = oThis.index()
 
 				if(!oThis.hasClass('found')){
-					oThis.addClass('found')
-					$('.'+sClass).addClass('found')
+					oThis
+						.addClass('found')
+						.parent().siblings('.map').find('li').eq(iIdx).addClass('found')
+					self.iCircleNow ++
+					if(self.iCircleNow >= self.iCircle){
+						clearInterval(self.oInterval)
+						console.log('成功弹窗')
+					}
 				}
 			})
+		},
+		play: function(eq){
+			var self = this
+
+			//当前游戏
+			self.oCountCurrent.html(eq+1)
+
+			//显示游戏并初始化
+			self.oDiffWrap
+				.addClass('show')
+				.find('.diff').eq(eq).addClass('show')
+					.siblings('.diff.show').removeClass('show')
+
+			self.oDiffWrap.find('li.found').removeClass('found')
+			clearInterval(self.oInterval)
+			self.iCircleNow = 0
+			self.oTimeLeft.html(self.iTime)
+
+			//设置倒计时条长度
+			self.iBarWidth = self.oBarWrap.width()
+			self.oCountBar.width(self.iBarWidth)
+
+			self.iNow = self.iTime
+			self.oInterval = setInterval('oDiff.countdown()', 1000)
+
+		},
+		countdown: function(){
+			var self = this,
+				iWidthNow = 0
+
+			self.iNow --
+			if(self.iNow < 0){
+				clearInterval(self.oInterval)
+				console.log('失败弹窗')
+			}else{
+				self.oTimeLeft.html(self.iNow)
+				if(self.iNow <= 10){
+					self.oCountBar.addClass('countdown_bar_red')
+				}
+
+				iWidthNow = (self.iNow/self.iTime)*self.iBarWidth
+				self.oCountBar.width(iWidthNow)
+			}
+		},
+		hide: function(){
+			var self = this
+
+			clearInterval(self.oInterval)
+			self.oDiffWrap.removeClass('show')
 		}
 	}
 </script>
