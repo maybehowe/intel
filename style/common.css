@@ -470,10 +470,10 @@ body{
     position: absolute;
     bottom: 84px;
     right: 126px;
-    width: 207px;
+    width: 205px;
     height: 39px;
-    padding: 8px 10px 8px 6px;
-    font-size: 1.4rem;
+    padding: 8px 10px 8px 8px;
+    font-size: 1.2rem;
     line-height: 1.4rem;
     background: url(../img/intel_dialog.png) no-repeat;
     background-size: 223px 55px;
