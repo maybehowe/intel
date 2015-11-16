@@ -126,7 +126,7 @@ body{
 .diff img{width: 100%;margin: 0 auto;display: block;border: none;}
 /*area{border: .2rem solid #f06a2e;display: block;outline: red;}*/
 .map{/*width: 259px;*/height: auto;margin: 0 4% 3px;position: relative;border: 1px solid #032155;clear: both;}
-.map li{width: 26px;height: 26px;border-radius: 50%;position: absolute;top: 0;margin: 0;border: 2px solid #f16b2c;}
+.map li{width: 26px;height: 26px;border-radius: 50%;position: absolute;top: 0;margin: 0;}
 .map li.found{border: 2px solid #f16b2c;}
 
 .map li.map_0_0{top: 3%;left: 24%;}
